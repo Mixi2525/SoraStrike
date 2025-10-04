@@ -65,7 +65,7 @@ private:
   float quat[4];
 
   /* ===== System Control ===== */
-  float ImpactLinerAccelThreshold = 1.9f; // 打撃したと判定される加速度
+  float impactLinerAccelThreshold = 1.9f; // 打撃したと判定される加速度
   float beginLowSwingLinerAccelZThreshold = -1.0f; // 振り下ろし始めと判定されるZ軸動加速度
   float beginLowSwingGyroXThreshold = -300.0f; // 振り下ろし始めと判定されるX軸角速度
   float failureLowSwingGyroXThreshold = -200.0f; // 振り下ろし中に打撃をやめたとみなすX軸角速度

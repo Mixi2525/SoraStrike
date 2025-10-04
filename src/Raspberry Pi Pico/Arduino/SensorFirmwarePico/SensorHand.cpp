@@ -324,7 +324,7 @@ void SensorHand::strikeDitection()
       }
       
       // 急停止だったら
-      if (filteredLinerAccel[2] > ImpactLinerAccelThreshold)
+      if (filteredLinerAccel[2] > impactLinerAccelThreshold)
       {
         state = State::Stopping;
         stateText = "Stopping";
@@ -351,7 +351,7 @@ void SensorHand::strikeDitection()
     case State::Stopping:
       // 叩いた後、加速度が閾値以下になるまで急停止状態を維持
       // これにより、連続で検出されてしまうのを防ぐ
-      if (filteredLinerAccel[2] < ImpactLinerAccelThreshold * StoppingAccelThresholdFactor)
+      if (filteredLinerAccel[2] < impactLinerAccelThreshold * StoppingAccelThresholdFactor)
       {
         Keyboard.releaseAll();
         state = State::Idle;
@@ -390,8 +390,8 @@ void SensorHand::printDebug()
   Serial.print(filteredLinerAccel[2]);
   Serial.print(", beginLowSwingLinerAccelZ:");
   Serial.print(beginLowSwingLinerAccelZThreshold);
-  Serial.print(", ImpactLinerAccelThreshold:");
-  Serial.print(ImpactLinerAccelThreshold);
+  Serial.print(", impactLinerAccelThreshold:");
+  Serial.print(impactLinerAccelThreshold);
 
   Serial.print(", filteredGyroX:");
   Serial.print(filteredGyro[0]);
